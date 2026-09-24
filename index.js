@@ -2,16 +2,14 @@ import { Client, GatewayIntentBits } from 'discord.js';
 
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { pathToFileURL } from 'node:url'
-
-import { keepAlive } from './webserver.js';
+import { pathToFileURL } from 'node:url';
 
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds, 
         GatewayIntentBits.GuildMembers, 
         GatewayIntentBits.GuildMessages
-    ]});;
+    ]});
 
 export async function loadEvents(client) {
     const eventPath = join(process.cwd(), 'eventHandler');
@@ -30,7 +28,4 @@ export async function loadEvents(client) {
     }   
 };
 await loadEvents(client);
-
-keepAlive();
-
 client.login(process.env.DISCORD_TOKEN);
