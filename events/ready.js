@@ -4,10 +4,10 @@ export default {
     name: Events.ClientReady,
     once: true,
     async execute(client) {
-        // for (const guild of client.guilds.cache.values()) {
-        //     await guild.members.fetch();
-        // }
-        // console.log("all members has been cache!!");
+        for (const guild of client.guilds.cache.values()) {
+            await guild.members.fetch();
+        }
+        console.log("all members has been cache!!");
 
         client.user.setPresence({ 
             activities: [{
