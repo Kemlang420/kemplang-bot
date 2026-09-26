@@ -4,12 +4,10 @@ export default {
     name: Events.ClientReady,
     once: true,
     async execute(client) {
-        console.log(`Bot berhasil login sebagai ${client.user.tag}`);
-
-        for (const guild of client.guilds.cache.values()) {
-            await guild.members.fetch();
-        }
-        console.log("Semua member berhasil di-cache!");
+        // for (const guild of client.guilds.cache.values()) {
+        //     await guild.members.fetch();
+        // }
+        // console.log("all members has been cache!!");
 
         client.user.setPresence({ 
             activities: [{
@@ -18,5 +16,6 @@ export default {
                 url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
             }]
         });
+        console.log(`Bot log in as ${client.user.tag}`);
     }
 };
