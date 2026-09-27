@@ -9,13 +9,18 @@ export default {
         }
         console.log("all members has been cache!!");
 
-        client.user.setPresence({ 
-            activities: [{
-                name: 'idk what to type ok just watch it',
-                type: ActivityType.Streaming,
-                url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            }]
-        });
+
+        const setBotPresence = () => {
+            client.user.setPresence({ 
+                activities: [{
+                    name: 'idk what to type ok just watch it',
+                    type: ActivityType.Streaming,
+                    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                }]
+            })
+        }
+        setBotPresence()
+        setInterval(setBotPresence, 1 * 24 * 60 * 60 * 1000 )
         console.log(`Bot log in as ${client.user.tag}`);
     }
 };
