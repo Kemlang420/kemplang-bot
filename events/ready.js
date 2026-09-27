@@ -9,7 +9,6 @@ export default {
         }
         console.log("all members has been cache!!");
 
-
         const setBotPresence = () => {
             client.user.setPresence({ 
                 activities: [{
@@ -20,7 +19,7 @@ export default {
             })
         }
         setBotPresence()
-        setInterval(setBotPresence, 1 * 24 * 60 * 60 * 1000 )
+        setInterval(setBotPresence, 60 * 60 * 1000 )
         console.log(`Bot log in as ${client.user.tag}`);
     }
 };
