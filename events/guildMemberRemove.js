@@ -3,10 +3,11 @@ import { Events, EmbedBuilder } from "discord.js";
 export default {
     name: Events.GuildMemberRemove,
     once: false,
-    execute(guildMember) {
+    async execute(guildMember) {
         const leaveChannel = guildMember.guild.channels.cache.get('1444261750915465257');
 
         if (leaveChannel) {
+
             const Humans = guildMember.guild.members.cache.filter(m => !m.user.bot).size;
             const Bots = guildMember.guild.members.cache.filter(b => b.user.bot).size;
 

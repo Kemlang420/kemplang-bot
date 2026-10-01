@@ -12,9 +12,9 @@ export default {
         const setBotPresence = () => {
             client.user.setPresence({ 
                 activities: [{
-                    name: 'idk what to type ok just watch it',
+                    name: 'Subscribe to Kemplang',
                     type: ActivityType.Streaming,
-                    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                    url: 'https://www.youtube.com/watch?v=ocQGwKOjrRc&t'
                 }]
             })
         }
