@@ -3,7 +3,7 @@ import { Events, EmbedBuilder } from "discord.js";
 export default {
     name: Events.GuildMemberRemove,
     once: false,
-    async execute(guildMember) {
+    execute(guildMember) {
         const leaveChannel = guildMember.guild.channels.cache.get('1444261750915465257');
 
         if (leaveChannel) {
